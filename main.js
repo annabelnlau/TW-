@@ -1,5 +1,10 @@
 let allElements = document.getElementsByTagName('*')
-let triggers = ['sexual assault', 'rape']
+
+let triggers = ['sexual assault', 'rape', 'sexual abuse', 'child abuse', 'pedophilia', 'pedophile', 
+'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'self harm']
+
+let triggersCaseInsensitive = triggers.map(trigger => trigger.toLowerCase())
+
 let foundTrigger = false
 
 
@@ -25,9 +30,9 @@ for (let i = 0; i < allElements.length; i++) {
 
 if (foundTrigger) {
   let triggerAlert = confirm('Hey! There may be some potentially triggering content on this page. Click OK to continue or Cancel to go back.')
-  if(triggerAlert){
+  if (triggerAlert) {
     console.log('proceeding')
   } else {
     window.history.back();
-}
+  }
 }
