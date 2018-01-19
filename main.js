@@ -21,6 +21,13 @@ for (let i = 0; i < allElements.length; i++) {
 
 }
 
+
+
 if (foundTrigger) {
-  alert('Trigger Warning')
+  let triggerAlert = confirm('Hey! There may be some potentially triggering content on this page. Click OK to continue or Cancel to go back.')
+  if(triggerAlert){
+    console.log('proceeding')
+  } else {
+    window.history.back();
+}
 }
