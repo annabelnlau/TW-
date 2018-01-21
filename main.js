@@ -1,8 +1,16 @@
 const allElements = document.getElementsByTagName('*')
-const allParagraphs = document.getElementsByTagName('p')
 
 let triggers = ['sexual assault', 'sexually assaulting', 'sexually assaulted', 'rape', 'sexual violence', 'sexual abuse', 'child abuse', 'pedophilia', 'pedophile',
-  'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'self harm', 'domestic abuse', 'domestic violence']
+  'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'domestic abuse', 'domestic violence']
+
+let userInput = chrome.storage.sync.get('newWord', function (words) {
+  newWord = words.newWord;
+  triggers.push(newWord)
+})
+
+
+
+  console.log(userInput, "USER INPUTTTT")
 
 let triggersCI = triggers.map(trigger => trigger.toLowerCase()) //case insensitive
 
@@ -36,7 +44,7 @@ for (let i = 0; i < allElements.length; i++) {
   }
 }
 
-
+console.log(triggers, "DOWN HEEEEEAHHH")
 if (foundTrigger) {
   let triggerAlert = confirm('TW: ' + triggers[index].toUpperCase() + '\n\n' +
     'Hey! There may be some potentially triggering content on this page.' + '\n' +
