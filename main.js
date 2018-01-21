@@ -10,12 +10,7 @@ let foundTrigger = false
 
 let index
 
-let invisible
-
 let title = document.getElementsByTagName('title')[0].innerText.toString().toLowerCase()
-
-
-//let elementsToHide = document.getElementsByTagName('*')
 
 for (let i = 0; i < allElements.length; i++) {
   let currentElement = allElements[i]
