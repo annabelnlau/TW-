@@ -1,7 +1,6 @@
 const allElements = document.getElementsByTagName('*')
 
-let triggers = ['sexual assault', 'sexually assaulting', 'sexually assaulted', 'rape', 'sexual violence', 'sexual abuse', 'sexual misconduct', 'child abuse', 'pedophilia', 'pedophile',
-  'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'domestic abuse', 'domestic violence']
+let triggers = ['sexual assault', 'sexually assaulting', 'sexually assaulted', 'rape', 'sexual violence', 'sexual abuse', 'sexual misconduct', 'child abuse', 'pedophilia', 'pedophile', 'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'domestic abuse', 'domestic violence']
 
 let triggersCI = triggers.map(trigger => trigger.toLowerCase()) //case insensitive
 
@@ -11,7 +10,7 @@ let index
 
 let title = document.getElementsByTagName('title')[0].innerText.toString().toLowerCase()
 
-chrome.storage.local.get('newWord', function (words) {  
+chrome.storage.local.get('newWord', function (words) {
   var newWord = words.newWord.toLowerCase()
   triggersCI.push(newWord)
   for (let m = 0; m < triggersCI.length; m++) {
