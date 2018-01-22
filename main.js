@@ -12,7 +12,7 @@ let index
 let title = document.getElementsByTagName('title')[0].innerText.toString().toLowerCase()
 
 chrome.storage.local.get('newWord', function (words) {  
-  var newWord = words.newWord
+  var newWord = words.newWord.toLowerCase()
   triggersCI.push(newWord)
   for (let m = 0; m < triggersCI.length; m++) {
     if (title.includes(triggersCI[m])) {
