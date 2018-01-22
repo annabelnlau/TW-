@@ -7,7 +7,7 @@
     "storage"
   ],
   "options_ui": {
-    "page": "options-in-progress/options.html",
+    "page": "options/options.html",
     "chrome_style": true
   },
   "browser_action": {

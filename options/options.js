@@ -1,5 +1,3 @@
-//IN PROGRESS
-
 function save_options() {
     let newWord = document.getElementById('newWord').value;
     chrome.storage.local.set({
