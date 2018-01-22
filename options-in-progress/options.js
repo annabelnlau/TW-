@@ -1,11 +1,10 @@
-// Saves options to chrome.storage.sync.
+//IN PROGRESS
+
 function save_options() {
     let newWord = document.getElementById('newWord').value;
-    console.log(newWord, "new word!")
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
       newWord: newWord
     }, function() {
-      // Update status to let user know options were saved.
       let status = document.getElementById('status');
       status.textContent = 'Your new word has been saved.';
       setTimeout(function() {
@@ -13,14 +12,9 @@ function save_options() {
       }, 750);
     });
   }
-console.log(newWord, "new word!")
 
-
-  // Restores select box and checkbox state using the preferences
-  // stored in chrome.storage.
   function restore_options() {
-    // Use default value color = 'red' and likesColor = true.
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       newWord: newWord,
     }, function(words) {
       document.getElementById('newWord').value = words.newWord;

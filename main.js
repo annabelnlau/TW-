@@ -3,15 +3,6 @@ const allElements = document.getElementsByTagName('*')
 let triggers = ['sexual assault', 'sexually assaulting', 'sexually assaulted', 'rape', 'sexual violence', 'sexual abuse', 'child abuse', 'pedophilia', 'pedophile',
   'suicide', 'suicidal', 'anorexia', 'bulimia', 'eating disorder', 'self-harm', 'domestic abuse', 'domestic violence']
 
-let userInput = chrome.storage.sync.get('newWord', function (words) {
-  newWord = words.newWord;
-  triggers.push(newWord)
-})
-
-
-
-  console.log(userInput, "USER INPUTTTT")
-
 let triggersCI = triggers.map(trigger => trigger.toLowerCase()) //case insensitive
 
 let foundTrigger = false
@@ -44,7 +35,6 @@ for (let i = 0; i < allElements.length; i++) {
   }
 }
 
-console.log(triggers, "DOWN HEEEEEAHHH")
 if (foundTrigger) {
   let triggerAlert = confirm('TW: ' + triggers[index].toUpperCase() + '\n\n' +
     'Hey! There may be some potentially triggering content on this page.' + '\n' +
@@ -55,3 +45,18 @@ if (foundTrigger) {
     window.history.back();
   }
 }
+
+/*
+IN PROGRESS
+
+chrome.storage.local.get('newWord', function (words) {  
+   newWord = words.newWord
+   callback(newWord)
+
+})
+
+
+function callback(newWord){
+  triggers.push(newWord)
+}
+*/
